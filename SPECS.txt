@@ -3,10 +3,10 @@
 - get all genres
 	-> GET /v4.1/genres
 
-- get artists (paging)
+- get artists
 	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx
 
-- get artists by genre (paging)
+- get artists by genre
 	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
 
 - like artists
@@ -21,20 +21,20 @@
 
 ***** TEACH VIBBIDI *****
 
-- get artists (paging) 
-- get artists by name (paging)
+- get artists
+- get artists by name
 	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx
 
-- get artists by genre (paging)
-- get artists by genre + by name (paging)
+- get artists by genre
+- get artists by genre + by name
 	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
 
-- get liked artists (paging)
-- get liked artists by name (paging)
+- get liked artists
+- get liked artists by name
 	-> GET /v4.1/users/me/likedArtists?start_point=0&items_to_get=20&q=xxx
 
-- get disliked artists (paging)
-- get disliked artists by name (paging)
+- get disliked artists
+- get disliked artists by name
 	-> GET /v4.1/users/me/dislikedArtists?start_point=0&items_to_get=20&q=xxx
 
 - like artist
@@ -62,10 +62,10 @@
 
 ***** MY PAGE / USER PAGE *****
 
-- get collected albums (paging)
+- get collected albums 
 	-> GET /v4.1/users/{user_id}/collectedAlbums?start_point=0&items_to_get=20
 
-- get liked artists (paging)
+- get liked artists 
 	-> GET /v4.1/users/{user_id}/likedArtists?start_point=0&items_to_get=20 (order by popularity)
 
 
@@ -97,11 +97,11 @@
 	-> GET /v4.1/artists/{artist_id}/albums?start_point=0&items_to_get=20
 	-> GET https://v4-searchapi.vibbidi.com/artists/{artist_id}/albums
 
-- get artist’s singles (paging)
+- get artist’s singles 
 	-> GET /v4.1/artists/{artist_id}/singles?start_point=0&items_to_get=20
 	-> GET https://v4-searchapi.vibbidi.com/artists/{artist_id}/singles
 
-- get artist’s collections (paging)
+- get artist’s collections 
 	-> ???
 	-> GET /v4.1/artists/{artist_id}/collections?start_point=0&items_to_get=20
 	-> https://v4-searchapi.vibbidi.com/artists/{artist_id}/collections
@@ -145,6 +145,7 @@
 	-> ???
 	-> POST /v4.1/albums/{album_id}/reports
 
+
 ***** SEARCH *****
 
 - get top charts
@@ -155,41 +156,41 @@
 	-> GET /v4.1/charts/{chart_id}/searchFull
 	-> except US 100
 
-- see all artists of genre (paging)
+- see all artists of genre 
 	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
 
-- see all albums of chart (paging)
+- see all albums of chart 
 	-> GET /v4.1/charts/{chart_id}/albums?start_point=0&items_to_get=20
 
-- see all collections of genre (paging)
+- see all collections of genre 
 	-> GET /genres/{genre_id}/collections?start_point=0&items_to_get=20
 
-- see all videos of chart (paging)
+- see all videos of chart 
 	-> GET /v4.1/charts/{chart_id}/videos?start_point=0&items_to_get=20
 
-- see all videos in a new (paging)
+- see all videos in a new 
 	-> GET /genres/{sub_genre_new_id}/new?start_point=0&items_to_get=20
 
-- see all videos in a classic (paging)
+- see all videos in a classic 
 	-> GET /genres/{sub_genre_classic_id}/classic?start_point=0&items_to_get=20
 
-- see all vides in a collection (paging)
+- see all vides in a collection 
 	-> GET /genres/{genre_id}/collections?start_point=0&items_to_get=20
 
-- search artists by text (paging)
+- search artists by text 
 	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx	
 
-- search albums by text (paging)
+- search albums by text 
 	-> ???
 	-> GET /v4.1/albums/search?start_point=0&items_to_get=20&q=xxx	
 
-- search collections by text (paging)
+- search collections by text 
 	-> GET /collections/search?start_point=0&items_to_get=20&q=xxx	
 
-- search singles by text (paging)
+- search singles by text 
 	-> GET /videos/search?start_point=0&items_to_get=20&q=xxx	
 
-- search users by text (paging)
+- search users by text 
 	-> GET /users/search?start_point=0&items_to_get=20&q=xxx	
 
 
