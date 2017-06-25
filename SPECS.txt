@@ -1,0 +1,182 @@
+***** ONBOARDING *****
+
+- get all genres
+	-> GET /v4.1/genres
+
+- get artists (paging)
+	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx
+
+- get artists by genre (paging)
+	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
+
+- like artists
+	-> POST /v4.1/users/me/likedArtists
+
+- dislike artists
+	-> POST /v4.1/users/me/dislikedArtists
+
+- get 3 cases: new user, existed user (finish reaction), existed user (doesn't finish reaction)
+	-> ???
+
+
+***** TEACH VIBBIDI *****
+
+- get artists (paging) 
+- get artists by name (paging)
+	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx
+
+- get artists by genre (paging)
+- get artists by genre + by name (paging)
+	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
+
+- get liked artists (paging)
+- get liked artists by name (paging)
+	-> GET /v4.1/users/me/likedArtists?start_point=0&items_to_get=20&q=xxx
+
+- get disliked artists (paging)
+- get disliked artists by name (paging)
+	-> GET /v4.1/users/me/dislikedArtists?start_point=0&items_to_get=20&q=xxx
+
+- like artist
+	-> POST /v4.1/users/me/likedArtists
+	-> Form/JSON param: `artist_ids=111,222,333` (comma-separated values)
+
+- unlike artist
+	-> DELETE /v4.1/users/me/likedArtists
+	-> Form/JSON param: `artist_ids=111,222,333` (comma-separated values)  
+
+- dislike artist
+	-> POST /v4.1/users/me/dislikedArtists
+	-> Form/JSON param: `artist_ids=111,222,333` (comma-separated values)  
+
+- undislike artist
+	-> DELETE /v4.1/users/me/dislikedArtists
+	-> Form/JSON param: `artist_ids=111,222,333` (comma-separated values)  
+
+
+- get artist name incremental
+	-> ???
+	-> GET /v4.1/search/artist_incremental?q=xxx
+
+
+
+***** MY PAGE / USER PAGE *****
+
+- get collected albums (paging)
+	-> GET /v4.1/users/{user_id}/collectedAlbums?start_point=0&items_to_get=20
+
+- get liked artists (paging)
+	-> GET /v4.1/users/{user_id}/likedArtists?start_point=0&items_to_get=20 (order by popularity)
+
+
+
+***** TIMELINE *****
+
+- artists for you = [Artist]
+
+- video = Single
+
+- albums for you = [Album]
+
+- collections for you = [Collection]
+
+- top charts = [Chart]
+
+- news = [ChartNew]
+
+- classics = [ChartClassic]
+
+
+***** ARTIST *****
+
+- get artist
+	-> ???
+
+- get artist’s albums
+	-> GET /v4.1/artists/{artist_id}/albums?start_point=0&items_to_get=20
+
+- get artist’s singles (paging)
+	-> GET /v4.1/artists/{artist_id}/singles?start_point=0&items_to_get=20
+
+- get artist’s collections (paging)
+	-> ???
+	-> GET /v4.1/artists/{artist_id}/collections?start_point=0&items_to_get=20
+	-> https://v4-searchapi.vibbidi.com/artists/\(artistId)/collections
+
+- get relate artists of artist
+	-> ???
+	-> GET /v4.1/artists/{artist_id}/related?start_point=0&items_to_get=20
+	-> https://v4-searchapi.vibbidi.com/artists/\(artistId)/related
+
+- like, unlike, dislike, undislike artist
+	-> *TEACH VIBBIDI*
+
+
+
+***** ALBUM *****
+
+- get album info
+	-> GET /v4.1/albums/{album_id}  
+
+- collect album
+	-> POST /v4.1/users/me/collectedAlbums
+	-> Form/JSON param: `id=456789`  
+
+- discard album
+	-> DELETE /v4.1/users/me/collectedAlbums
+	-> Form/JSON param: `id=456789`
+
+- get album’s videos (all)
+- get shuffle album’s videos (all)
+	-> GET /v4.1/albums/{album_id}/videos?shuffled=1
+
+
+- get related albums of album
+	-> ???
+	-> GET /v4.1/albums/{album_id}/related?start_point=0&items_to_get=20
+
+- report album
+	-> ???
+	-> POST albums/{album_id}/reports
+
+***** SEARCH *****
+
+- get top charts
+	-> GET /v4.1/charts?type=top
+	-> handle TOP US 100 (region_id)
+
+- see all artists of (genre OR? chart) (paging OR? all)
+	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20?shuffled=1
+
+- see all albums of (genre OR? chart) (paging OR? all)
+	-> GET /v4.1/genres/{genre_id}/albums?start_point=0&items_to_get=20?shuffled=1
+	-> GET /v4.1/charts/{chart_id}/albums ???
+
+- see all collections of (genre OR? chart) (paging OR? all)
+	-> GET /genres/{genre_id}/collections
+
+- see all videos of (genre OR? chart) (paging OR? all)
+	-> GET /v4.1/charts/{chart_id}/videos?start_point=0&items_to_get=20
+
+- see all videos in a new
+	-> GET /genres/{sub_genre_id}/new
+
+- see all videos in a classic
+	-> GET /genres/{sub_genre_id}/classic
+
+- see all vides in a collection
+
+
+
+- search artists by text (all?)
+
+- search albums by text (paging)
+
+- search collections by text (paging)
+
+- search singles by text (paging)
+
+- search users by text (paging)
+
+
+
