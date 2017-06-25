@@ -69,21 +69,19 @@
 	-> GET /v4.1/users/{user_id}/likedArtists?start_point=0&items_to_get=20 (order by popularity)
 
 
-
 ***** TIMELINE *****
 
+- get feed
+	-> ???
+	-> GET /feed
+	-> http://wizard.st/vtest/feed-merge-timeline.json
+
 - artists for you = [Artist]
-
 - video = Single
-
 - albums for you = [Album]
-
 - collections for you = [Collection]
-
 - top charts = [Chart]
-
 - news = [ChartNew]
-
 - classics = [ChartClassic]
 
 
@@ -91,22 +89,27 @@
 
 - get artist
 	-> ???
+	-> GET /v4.1/artists/{artist_id}
+	-> https://v4-searchapi.vibbidi.com/artists/{id}
+	-> http://wizard.st/vtest/artist-merge.json
 
 - get artist’s albums
 	-> GET /v4.1/artists/{artist_id}/albums?start_point=0&items_to_get=20
+	-> GET https://v4-searchapi.vibbidi.com/artists/{artist_id}/albums
 
 - get artist’s singles (paging)
 	-> GET /v4.1/artists/{artist_id}/singles?start_point=0&items_to_get=20
+	-> GET https://v4-searchapi.vibbidi.com/artists/{artist_id}/singles
 
 - get artist’s collections (paging)
 	-> ???
 	-> GET /v4.1/artists/{artist_id}/collections?start_point=0&items_to_get=20
-	-> https://v4-searchapi.vibbidi.com/artists/\(artistId)/collections
+	-> https://v4-searchapi.vibbidi.com/artists/{artist_id}/collections
 
 - get relate artists of artist
 	-> ???
 	-> GET /v4.1/artists/{artist_id}/related?start_point=0&items_to_get=20
-	-> https://v4-searchapi.vibbidi.com/artists/\(artistId)/related
+	-> https://v4-searchapi.vibbidi.com/artists/{artist_id}/related
 
 - like, unlike, dislike, undislike artist
 	-> *TEACH VIBBIDI*
@@ -116,7 +119,10 @@
 ***** ALBUM *****
 
 - get album info
-	-> GET /v4.1/albums/{album_id}  
+	-> GET /v4.1/albums/{album_id}
+	-> GET /v4.1/albums/{album_id}?start_point=0&items_to_get=20 ???
+	-> Change in JSON response “release_date” -> Milliseconds since Epoch
+	-> https://v4-searchapi.vibbidi.com/albums/{album_id}
 
 - collect album
 	-> POST /v4.1/users/me/collectedAlbums
@@ -137,46 +143,54 @@
 
 - report album
 	-> ???
-	-> POST albums/{album_id}/reports
+	-> POST /v4.1/albums/{album_id}/reports
 
 ***** SEARCH *****
 
 - get top charts
 	-> GET /v4.1/charts?type=top
-	-> handle TOP US 100 (region_id)
+	-> handle TOP US 100 (region_id) ???
 
-- see all artists of (genre OR? chart) (paging OR? all)
-	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20?shuffled=1
+- get info of chart
+	-> GET /v4.1/charts/{chart_id}/searchFull
+	-> except US 100
 
-- see all albums of (genre OR? chart) (paging OR? all)
-	-> GET /v4.1/genres/{genre_id}/albums?start_point=0&items_to_get=20?shuffled=1
-	-> GET /v4.1/charts/{chart_id}/albums ???
+- see all artists of genre (paging)
+	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
 
-- see all collections of (genre OR? chart) (paging OR? all)
-	-> GET /genres/{genre_id}/collections
+- see all albums of chart (paging)
+	-> GET /v4.1/charts/{chart_id}/albums?start_point=0&items_to_get=20
 
-- see all videos of (genre OR? chart) (paging OR? all)
+- see all collections of genre (paging)
+	-> GET /genres/{genre_id}/collections?start_point=0&items_to_get=20
+
+- see all videos of chart (paging)
 	-> GET /v4.1/charts/{chart_id}/videos?start_point=0&items_to_get=20
 
-- see all videos in a new
-	-> GET /genres/{sub_genre_id}/new
+- see all videos in a new (paging)
+	-> GET /genres/{sub_genre_new_id}/new?start_point=0&items_to_get=20
 
-- see all videos in a classic
-	-> GET /genres/{sub_genre_id}/classic
+- see all videos in a classic (paging)
+	-> GET /genres/{sub_genre_classic_id}/classic?start_point=0&items_to_get=20
 
-- see all vides in a collection
+- see all vides in a collection (paging)
+	-> GET /genres/{genre_id}/collections?start_point=0&items_to_get=20
 
-
-
-- search artists by text (all?)
+- search artists by text (paging)
+	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx	
 
 - search albums by text (paging)
+	-> ???
+	-> GET /v4.1/albums/search?start_point=0&items_to_get=20&q=xxx	
 
 - search collections by text (paging)
+	-> GET /collections/search?start_point=0&items_to_get=20&q=xxx	
 
 - search singles by text (paging)
+	-> GET /videos/search?start_point=0&items_to_get=20&q=xxx	
 
 - search users by text (paging)
+	-> GET /users/search?start_point=0&items_to_get=20&q=xxx	
 
 
 
