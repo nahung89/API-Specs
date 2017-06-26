@@ -1,18 +1,18 @@
 ***** ONBOARDING *****
 
-- get all genres
+* get all genres
 	-> GET /v4.1/genres
 
-- get artists
+* get artists
 	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx
 
-- get artists by genre
+* get artists by genre
 	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
 
-- like artists
+* like artists
 	-> POST /v4.1/users/me/likedArtists
 
-- dislike artists
+* dislike artists
 	-> POST /v4.1/users/me/dislikedArtists
 
 - get 3 cases: new user, existed user (finish reaction), existed user (doesn't finish reaction)
@@ -21,35 +21,35 @@
 
 ***** TEACH VIBBIDI *****
 
-- get artists
-- get artists by name
+* get artists
+* get artists by name
 	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx
 
-- get artists by genre
-- get artists by genre + by name
+* get artists by genre
+* get artists by genre + by name
 	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
 
-- get liked artists
-- get liked artists by name
+* get liked artists
+* get liked artists by name
 	-> GET /v4.1/users/me/likedArtists?start_point=0&items_to_get=20&q=xxx
 
-- get disliked artists
-- get disliked artists by name
+* get disliked artists
+* get disliked artists by name
 	-> GET /v4.1/users/me/dislikedArtists?start_point=0&items_to_get=20&q=xxx
 
-- like artist
+* like artist
 	-> POST /v4.1/users/me/likedArtists
 	-> Form/JSON param: `artist_ids=111,222,333` (comma-separated values)
 
-- unlike artist
+* unlike artist
 	-> DELETE /v4.1/users/me/likedArtists
 	-> Form/JSON param: `artist_ids=111,222,333` (comma-separated values)  
 
-- dislike artist
+* dislike artist
 	-> POST /v4.1/users/me/dislikedArtists
 	-> Form/JSON param: `artist_ids=111,222,333` (comma-separated values)  
 
-- undislike artist
+* undislike artist
 	-> DELETE /v4.1/users/me/dislikedArtists
 	-> Form/JSON param: `artist_ids=111,222,333` (comma-separated values)  
 
@@ -62,10 +62,10 @@
 
 ***** MY PAGE / USER PAGE *****
 
-- get collected albums 
++ get collected albums 
 	-> GET /v4.1/users/{user_id}/collectedAlbums?start_point=0&items_to_get=20
 
-- get liked artists 
++ get liked artists 
 	-> GET /v4.1/users/{user_id}/likedArtists?start_point=0&items_to_get=20 (order by popularity)
 
 
@@ -76,26 +76,28 @@
 	-> GET /feed
 	-> http://wizard.st/vtest/feed-merge-timeline.json
 
-- artists for you = [Artist]
-- video = Single
-- albums for you = [Album]
-- collections for you = [Collection]
-- top charts = [Chart]
-- news = [ChartNew]
-- classics = [ChartClassic]
+// - artists for you = [Artist]
+// - video = Single
+// - albums for you = [Album]
+// - collections for you = [Collection]
+// - top charts = [Chart]
+// - news = [ChartNew]
+// - classics = [ChartClassic]
 
 
 ***** ARTIST *****
 
 - get artist
-	-> ???
 	-> GET /v4.1/artists/{artist_id}
 	-> https://v4-searchapi.vibbidi.com/artists/{id}
 	-> http://wizard.st/vtest/artist-merge.json
+	-> lack `reaction`
+	-> lack `collections`
 
 - get artist’s albums
 	-> GET /v4.1/artists/{artist_id}/albums?start_point=0&items_to_get=20
 	-> GET https://v4-searchapi.vibbidi.com/artists/{artist_id}/albums
+	-> lack `artist`
 
 - get artist’s singles 
 	-> GET /v4.1/artists/{artist_id}/singles?start_point=0&items_to_get=20
