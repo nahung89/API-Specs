@@ -16,7 +16,7 @@
 	-> POST /v4.1/users/me/dislikedArtists
 
 - get 3 cases: new user, existed user (finish reaction), existed user (doesn't finish reaction)
-	-> ???
+	[!] ???
 
 
 ***** TEACH VIBBIDI *****
@@ -55,7 +55,7 @@
 
 
 - get artist name incremental
-	-> ???
+	[!] ???
 	-> GET /v4.1/search/artist_incremental?q=xxx
 
 
@@ -72,7 +72,7 @@
 ***** TIMELINE *****
 
 - get feed
-	-> ???
+	[!] ???
 	-> GET /feed
 	-> http://wizard.st/vtest/feed-merge-timeline.json
 
@@ -91,30 +91,31 @@
 	-> GET /v4.1/artists/{artist_id}
 	-> https://v4-searchapi.vibbidi.com/artists/{id}
 	-> http://wizard.st/vtest/artist-merge.json
-	-> lack `reaction`
-	-> lack `collections`
+	[!] miss `reaction`
+	[!] miss `collections`
 
 - get artist’s albums
 	-> GET /v4.1/artists/{artist_id}/albums?start_point=0&items_to_get=20
 	-> GET https://v4-searchapi.vibbidi.com/artists/{artist_id}/albums
-	-> lack `artist`
+	[!] miss `artist`
 
 - get artist’s singles 
 	-> GET /v4.1/artists/{artist_id}/singles?start_point=0&items_to_get=20
 	-> GET https://v4-searchapi.vibbidi.com/artists/{artist_id}/singles
+	[!] change `singles` to `videos`
+	[!] miss `width`, `height`, `duration`, `source` —> check /videos/{video_id}
 
 - get artist’s collections 
-	-> ???
-	-> GET /v4.1/artists/{artist_id}/collections?start_point=0&items_to_get=20
+	[!] Not found -> GET /v4.1/artists/{artist_id}/collections?start_point=0&items_to_get=20
 	-> https://v4-searchapi.vibbidi.com/artists/{artist_id}/collections
+	[!] Empty array
 
 - get relate artists of artist
-	-> ???
-	-> GET /v4.1/artists/{artist_id}/related?start_point=0&items_to_get=20
+	[!] Not found -> GET /v4.1/artists/{artist_id}/related?start_point=0&items_to_get=20
 	-> https://v4-searchapi.vibbidi.com/artists/{artist_id}/related
 
 - like, unlike, dislike, undislike artist
-	-> *TEACH VIBBIDI*
+	-> Check TEACH VIBBIDI
 
 
 
@@ -125,6 +126,8 @@
 	-> GET /v4.1/albums/{album_id}?start_point=0&items_to_get=20 ???
 	-> Change in JSON response “release_date” -> Milliseconds since Epoch
 	-> https://v4-searchapi.vibbidi.com/albums/{album_id}
+	[!] miss `videos`
+	[!] `artist` must be single, not array `artists`
 
 - collect album
 	-> POST /v4.1/users/me/collectedAlbums
