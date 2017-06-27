@@ -128,19 +128,23 @@
 	-> https://v4-searchapi.vibbidi.com/albums/{album_id}
 	[!] miss `videos`
 	[!] `artist` must be single, not array `artists`
+	[!] miss `scrolling` {`start_point`, `items`, `next`}
 
 - collect album
 	-> POST /v4.1/users/me/collectedAlbums
 	-> Form/JSON param: `id=456789`  
+	[!] params `id` need to be string
 
 - discard album
 	-> DELETE /v4.1/users/me/collectedAlbums
 	-> Form/JSON param: `id=456789`
+	[!] params `id` need to be string
 
 - get album’s videos (all)
 - get shuffle album’s videos (all)
 	-> GET /v4.1/albums/{album_id}/videos?shuffled=1
-
+	[!] need to follow /collections/{id} -> paging!
+	[!] need to follow /v4.1/collections/{id}/shuffled -> paging!
 
 - get related albums of album
 	-> ???
