@@ -168,12 +168,14 @@
 
 - see all artists of genre 
 	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
+	[!] handle US 100
 
 - see all albums of chart 
 	-> GET /v4.1/charts/{chart_id}/albums?start_point=0&items_to_get=20
 
 - see all collections of genre 
 	-> GET /genres/{genre_id}/collections?start_point=0&items_to_get=20
+	[!] handle US 100
 
 - see all videos of chart 
 	-> GET /v4.1/charts/{chart_id}/videos?start_point=0&items_to_get=20
@@ -186,6 +188,7 @@
 
 - see all vides in a collection 
 	-> GET /genres/{genre_id}/collections?start_point=0&items_to_get=20
+	[!] handle US 100
 
 - search artists by text 
 	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx	
