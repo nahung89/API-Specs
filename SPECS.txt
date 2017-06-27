@@ -55,8 +55,7 @@
 
 
 - get artist name incremental
-	[!] ???
-	-> GET /v4.1/search/artist_incremental?q=xxx
+	[!] GET /v4.1/search/artist_incremental?q=xxx
 
 
 
