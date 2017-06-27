@@ -129,6 +129,8 @@
 	[!] miss `videos`
 	[!] `artist` must be single, not array `artists`
 	[!] miss `scrolling` {`start_point`, `items`, `next`}
+	Update: combine /v4.1/albums/{id} & /v4.1/albums/{id}/videos together -> /v4.1/albums/{id}/videos?withAlbumInfo=true
+	Ref: https://vibbidi.slack.com/archives/C33TVS58E/p1498473089758118
 
 - collect album
 	-> POST /v4.1/users/me/collectedAlbums
@@ -145,25 +147,24 @@
 	-> GET /v4.1/albums/{album_id}/videos?shuffled=1
 	[!] need to follow /collections/{id} -> paging!
 	[!] need to follow /v4.1/collections/{id}/shuffled -> paging!
+	[!] see <get_album_info>
 
 - get related albums of album
-	-> ???
-	-> GET /v4.1/albums/{album_id}/related?start_point=0&items_to_get=20
+	[!] Not found -> GET /v4.1/albums/{album_id}/related?start_point=0&items_to_get=20
+	-> http://wizard.st/vtest/album-related.json
 
 - report album
-	-> ???
-	-> POST /v4.1/albums/{album_id}/reports
+	[!] POST /v4.1/albums/{album_id}/reports
 
 
 ***** SEARCH *****
 
 - get top charts
 	-> GET /v4.1/charts?type=top
-	-> handle TOP US 100 (region_id) ???
 
 - get info of chart
 	-> GET /v4.1/charts/{chart_id}/searchFull
-	-> except US 100
+	[!] handle US 100, associate with `region_id` instead of `genre_id`
 
 - see all artists of genre 
 	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
@@ -190,8 +191,7 @@
 	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx	
 
 - search albums by text 
-	-> ???
-	-> GET /v4.1/albums/search?start_point=0&items_to_get=20&q=xxx	
+	[!] Not found -> GET /v4.1/albums/search?start_point=0&items_to_get=20&q=xxx	
 
 - search collections by text 
 	-> GET /collections/search?start_point=0&items_to_get=20&q=xxx	
