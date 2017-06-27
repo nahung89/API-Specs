@@ -126,6 +126,7 @@
 	-> GET /v4.1/albums/{album_id}?start_point=0&items_to_get=20 ???
 	-> Change in JSON response “release_date” -> Milliseconds since Epoch
 	-> https://v4-searchapi.vibbidi.com/albums/{album_id}
+	[!] miss `is_collected`
 	[!] miss `videos`
 	[!] `artist` must be single, not array `artists`
 	[!] miss `scrolling` {`start_point`, `items`, `next`}
