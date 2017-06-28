@@ -89,20 +89,14 @@
 
 - get artist
 	-> GET /v4.1/artists/{artist_id}
-	[v] miss `reaction`
-	[v] miss `collections`
 	[!] `collections` = []
 
 + get artist’s albums
 	-> GET /v4.1/artists/{artist_id}/albums?start_point=0&items_to_get=20
-	-> GET https://v4-searchapi.vibbidi.com/artists/{artist_id}/albums
 	[!?] miss `artist`
 
 - get artist’s singles 
 	-> GET /v4.1/artists/{artist_id}/singles?start_point=0&items_to_get=20
-	-> GET https://v4-searchapi.vibbidi.com/artists/{artist_id}/singles
-	[!] change `singles` to `videos`
-	[!] miss `width`, `height`, `duration`, `source` —> check /videos/{video_id}
 
 - get artist’s collections 
 	[!] Not found -> GET /v4.1/artists/{artist_id}/collections?start_point=0&items_to_get=20
@@ -110,8 +104,7 @@
 	[!] Empty array
 
 - get relate artists of artist
-	[!] Not found -> GET /v4.1/artists/{artist_id}/related?start_point=0&items_to_get=20
-	-> https://v4-searchapi.vibbidi.com/artists/{artist_id}/related
+	-> GET /v4.1/artists/{artist_id}/related?start_point=0&items_to_get=20
 
 * like, unlike, dislike, undislike artist
 	-> Check TEACH VIBBIDI
