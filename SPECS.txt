@@ -119,6 +119,7 @@
 	2. `shuffled=1`: shuffle videos
 	3. Change in JSON response “release_date” -> Milliseconds since Epoch
 	[!] `shuffled=1` cause re-sorder videos when load next page
+	[v] `all_videos=1` combines with `shuffled=1`
 	[v] miss `is_collected`
 	[v] miss `videos` -> apply with `has_videos=1`
 	[v] `artist` must be single, not array `artists` -> using 1st artist
