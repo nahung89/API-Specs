@@ -56,7 +56,8 @@
 
 - get artist name incremental
 	[!] GET /v4.1/search/artist_incremental?q=xxx
-        ->  GET /artists/incrementalSearch  (v4.0 version)
+        [!] GET /artists/incrementalSearch  (v4.0 version) -> not really useful…
+	
 
 
 ***** MY PAGE / USER PAGE *****
