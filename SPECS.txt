@@ -39,19 +39,19 @@
 
 * like artist
 	-> POST /v4.1/users/me/likedArtists
-	-> Form/JSON param: `artist_ids=111,222,333` (comma-separated values)
+	1. Form/JSON param: `artist_ids=111,222,333` (comma-separated values)
 
 * unlike artist
 	-> DELETE /v4.1/users/me/likedArtists
-	-> Form/JSON param: `artist_ids=111,222,333` (comma-separated values)  
+	1. Form/JSON param: `artist_ids=111,222,333` (comma-separated values)  
 
 * dislike artist
 	-> POST /v4.1/users/me/dislikedArtists
-	-> Form/JSON param: `artist_ids=111,222,333` (comma-separated values)  
+	1. Form/JSON param: `artist_ids=111,222,333` (comma-separated values)  
 
 * undislike artist
 	-> DELETE /v4.1/users/me/dislikedArtists
-	-> Form/JSON param: `artist_ids=111,222,333` (comma-separated values)  
+	1. Form/JSON param: `artist_ids=111,222,333` (comma-separated values)  
 
 
 - get artist name incremental
@@ -88,10 +88,9 @@
 
 - get artist
 	-> GET /v4.1/artists/{artist_id}
-	-> https://v4-searchapi.vibbidi.com/artists/{id}
-	-> http://wizard.st/vtest/artist-merge.json
-	[!] miss `reaction`
-	[!] miss `collections`
+	[v] miss `reaction`
+	[v] miss `collections`
+	[!] `collections` = []
 
 - get artist’s albums
 	-> GET /v4.1/artists/{artist_id}/albums?start_point=0&items_to_get=20
@@ -121,26 +120,26 @@
 ***** ALBUM *****
 
 - get album info
-	-> GET /v4.1/albums/{album_id}
-	-> GET /v4.1/albums/{album_id}?start_point=0&items_to_get=20 ???
-	-> Change in JSON response “release_date” -> Milliseconds since Epoch
-	-> https://v4-searchapi.vibbidi.com/albums/{album_id}
-	[!] miss `is_collected`
-	[!] miss `videos`
-	[!] `artist` must be single, not array `artists`
-	[!] miss `scrolling` {`start_point`, `items`, `next`}
-	Update: combine /v4.1/albums/{id} & /v4.1/albums/{id}/videos together -> /v4.1/albums/{id}/videos?withAlbumInfo=true
-	Ref: https://vibbidi.slack.com/archives/C33TVS58E/p1498473089758118
+	-> GET /v4.1/albums/{album_id}?has_videos=1&shuffled=1&start_point=5&items_to_get=20
+	1. `has_videos=1`: include all videos of the album
+	2. `shuffled=1`: shuffle videos
+	3. Change in JSON response “release_date” -> Milliseconds since Epoch
+	[!] `shuffled=1` cause re-sorder videos when load next page
+	[v] miss `is_collected`
+	[v] miss `videos` -> apply with `has_videos=1`
+	[v] `artist` must be single, not array `artists` -> using 1st artist
+	[v] miss `scrolling` {`start_point`, `items`, `next`} -> apply with `has_videos=1`
+
 
 - collect album
 	-> POST /v4.1/users/me/collectedAlbums
-	-> Form/JSON param: `id=456789`  
-	[!] params `id` need to be string
+	1. Form/JSON param: `id=456789`  
+	[!?] params `id` need to be string
 
 - discard album
 	-> DELETE /v4.1/users/me/collectedAlbums
-	-> Form/JSON param: `id=456789`
-	[!] params `id` need to be string
+	1. Form/JSON param: `id=456789`
+	[!?] params `id` need to be string
 
 - get album’s videos (all)
 - get shuffle album’s videos (all)
