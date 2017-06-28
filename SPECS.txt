@@ -92,7 +92,7 @@
 	[v] miss `collections`
 	[!] `collections` = []
 
-* get artist’s albums
++ get artist’s albums
 	-> GET /v4.1/artists/{artist_id}/albums?start_point=0&items_to_get=20
 	-> GET https://v4-searchapi.vibbidi.com/artists/{artist_id}/albums
 	[!?] miss `artist`
@@ -184,10 +184,6 @@
 
 - see all videos in a classic 
 	-> GET /genres/{sub_genre_classic_id}/classic?start_point=0&items_to_get=20
-
-- see all vides in a collection 
-	-> GET /genres/{genre_id}/collections?start_point=0&items_to_get=20
-	[!] handle US 100
 
 - search artists by text 
 	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx	
