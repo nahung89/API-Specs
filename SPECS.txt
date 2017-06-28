@@ -92,10 +92,10 @@
 	[v] miss `collections`
 	[!] `collections` = []
 
-- get artist’s albums
+* get artist’s albums
 	-> GET /v4.1/artists/{artist_id}/albums?start_point=0&items_to_get=20
 	-> GET https://v4-searchapi.vibbidi.com/artists/{artist_id}/albums
-	[!] miss `artist`
+	[!?] miss `artist`
 
 - get artist’s singles 
 	-> GET /v4.1/artists/{artist_id}/singles?start_point=0&items_to_get=20
@@ -112,7 +112,7 @@
 	[!] Not found -> GET /v4.1/artists/{artist_id}/related?start_point=0&items_to_get=20
 	-> https://v4-searchapi.vibbidi.com/artists/{artist_id}/related
 
-- like, unlike, dislike, undislike artist
+* like, unlike, dislike, undislike artist
 	-> Check TEACH VIBBIDI
 
 
@@ -131,12 +131,12 @@
 	[v] miss `scrolling` {`start_point`, `items`, `next`} -> apply with `has_videos=1`
 
 
-- collect album
+* collect album
 	-> POST /v4.1/users/me/collectedAlbums
 	1. Form/JSON param: `id=456789`  
 	[!?] params `id` need to be string
 
-- discard album
+* discard album
 	-> DELETE /v4.1/users/me/collectedAlbums
 	1. Form/JSON param: `id=456789`
 	[!?] params `id` need to be string
