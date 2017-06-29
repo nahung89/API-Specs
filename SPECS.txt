@@ -164,7 +164,7 @@
 	[!] handle US 100
 
 - see all videos of chart 
-	-> GET /v4.1/charts/{chart_id}/videos?start_point=0&items_to_get=20
+	-> GET /v4.1/charts/{chart_id}?start_point=0&items_to_get=20
 
 - see all videos in a new 
 	-> GET /genres/{sub_genre_new_id}/new?start_point=0&items_to_get=20
