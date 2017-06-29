@@ -62,10 +62,10 @@
 
 ***** MY PAGE / USER PAGE *****
 
-+ get collected albums 
+* get collected albums 
 	-> GET /v4.1/users/{user_id}/collectedAlbums?start_point=0&items_to_get=20
 
-+ get liked artists 
+* get liked artists 
 	-> GET /v4.1/users/{user_id}/likedArtists?start_point=0&items_to_get=20 (order by popularity)
 
 
@@ -95,7 +95,7 @@
 	-> GET /v4.1/artists/{artist_id}/albums?start_point=0&items_to_get=20
 	[!?] miss `artist`
 
-- get artist’s singles 
+* get artist’s singles 
 	-> GET /v4.1/artists/{artist_id}/singles?start_point=0&items_to_get=20
 
 - get artist’s collections 
@@ -103,7 +103,7 @@
 	-> https://v4-searchapi.vibbidi.com/artists/{artist_id}/collections
 	[!] Empty array
 
-- get relate artists of artist
+* get relate artists of artist
 	-> GET /v4.1/artists/{artist_id}/related?start_point=0&items_to_get=20
 
 * like, unlike, dislike, undislike artist
@@ -114,17 +114,12 @@
 ***** ALBUM *****
 
 - get album info
-	-> GET /v4.1/albums/{album_id}?has_videos=1&shuffled=1&start_point=5&items_to_get=20
+	-> GET /v4.1/albums/{album_id}?has_videos=1
 	1. `has_videos=1`: include all videos of the album
-	2. `shuffled=1`: shuffle videos
+	2. `artist` must be single, not array `artists` -> using 1st artist
 	3. Change in JSON response “release_date” -> Milliseconds since Epoch
-	[!] `shuffled=1` cause re-sorder videos when load next page
-	[v] `all_videos=1` combines with `shuffled=1`
-	[v] miss `is_collected`
-	[v] miss `videos` -> apply with `has_videos=1`
-	[v] `artist` must be single, not array `artists` -> using 1st artist
-	[v] miss `scrolling` {`start_point`, `items`, `next`} -> apply with `has_videos=1`
-
+	4. `scrolling` {`start_point`, `items`, `next`} -> apply with `has_videos=1`
+	5. Shuffle function will be handled by client side (iOS & Android)
 
 * collect album
 	-> POST /v4.1/users/me/collectedAlbums
@@ -135,13 +130,6 @@
 	-> DELETE /v4.1/users/me/collectedAlbums
 	1. Form/JSON param: `id=456789`
 	[!?] params `id` need to be string
-
-- get album’s videos (all)
-- get shuffle album’s videos (all)
-	-> GET /v4.1/albums/{album_id}/videos?shuffled=1
-	[!] need to follow /collections/{id} -> paging!
-	[!] need to follow /v4.1/collections/{id}/shuffled -> paging!
-	[!] see <get_album_info>
 
 - get related albums of album
 	[!] Not found -> GET /v4.1/albums/{album_id}/related?start_point=0&items_to_get=20
