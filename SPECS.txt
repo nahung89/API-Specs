@@ -3,6 +3,10 @@
 * get all genres
 	-> GET /v4.1/genres
 
+* get genres for Teach VIBBIDI Your Taste page
+	[!] Not found
+	-> GET /v4.1/genres?forTaste=1
+
 * get artists
 	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx
 
