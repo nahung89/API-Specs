@@ -188,12 +188,24 @@
 - GET /v4.1/charts/{chart_id}/searchFull
 	[!] include TOP XXX CHART image
 
-- http://v4-api.vibbidi.com:8018/v4.1/albums/392111260176554?has_videos=1&items_to_get=0&start_point=0&t=1498787405198
+- GET http://v4-api.vibbidi.com:8018/v4.1/albums/392111260176554?has_videos=1&items_to_get=0&start_point=0&t=1498787405198
 	[!] miss `collector` 
 
-- http://v4-api.vibbidi.com:8018/v4.1/albums/256497038187643?has_videos=1&items_to_get=0&start_point=0&t=1498731543367
+- GET http://v4-api.vibbidi.com:8018/v4.1/albums/256497038187643?has_videos=1&items_to_get=0&start_point=0&t=1498731543367
 	[!] miss `videos`. Other albums might have same problem
 
-- http://v4-api.vibbidi.com:8018/v4.1/artists
+- GET http://v4-api.vibbidi.com:8018/v4.1/artists
 	[!] optimize avatar size to reduce download time
 
+- GET http://v4-api.vibbidi.com:8018/activities
+	[!] 404 api.not_found.app_error
+
+- GET /videos/{videoId}
+- GET /videos/search
+- GET /v4.1/artists/{artist_id}/singles
+- GET /genres/{id}/new
+- GET /genres/{id}/classic
+- GET /charts/{id}
+- GET /collections/{id}
+- GET /v4.1/collections/{id}/shuffled
+	-> add `artist_id` into each `video` object
