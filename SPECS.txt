@@ -178,6 +178,20 @@
 - search users by text 
 	-> GET /users/search?start_point=0&items_to_get=20&q=xxx	
 
+***** VIDEO *****
+
+- like video
+    -> POST /v4.1/videos/{video_id}/liked
+
+- dislike video
+    -> POST /v4.1/videos/{video_id}/disliked
+
+- post report
+    -> POST /v4.1/videos/{video_id}/fix
+    - artist
+    - song
+    - url
+    - feedback
 
 ***** OTHER ******
 
