@@ -182,16 +182,19 @@
 
 - like video
     -> POST /v4.1/videos/{video_id}/liked
+    [!] NOT FOUND
 
 - dislike video
     -> POST /v4.1/videos/{video_id}/disliked
-
+    [!] NOT FOUND
+    
 - post report
     -> POST /v4.1/videos/{video_id}/fix
     - artist
     - song
     - url
     - feedback
+    [!] NOT FOUND
 
 ***** OTHER ******
 
