@@ -126,9 +126,7 @@
 	[!?] params `id` need to be string
 
 - discard album
-	-> DELETE /v4.1/users/me/collectedAlbums
-	1. Form/JSON param: `id=456789`
-	[!?] params `id` need to be string
+	-> DELETE /v4.1/users/me/collectedAlbums/{album_id}
 
 - get related albums of album
 	-> GET /v4.1/albums/{album_id}/related?start_point=0&items_to_get=20
