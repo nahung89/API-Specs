@@ -95,9 +95,8 @@
 	-> GET /v4.1/artists/{artist_id}/singles?start_point=0&items_to_get=20
 
 - get artist’s collections 
-	[!][*] Not found -> GET /v4.1/artists/{artist_id}/collections?start_point=0&items_to_get=20
-	-> https://v4-searchapi.vibbidi.com/artists/{artist_id}/collections
-
+	-> GET /v4.1/artists/{artist_id}/collections?start_point=0&items_to_get=20
+	
 - get artist’ live videos
 	[!][*] GET /v4.1/artists/{artist_id}/live_videos?start_point=0&items_to_get=20
 
