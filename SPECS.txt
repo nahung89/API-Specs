@@ -146,7 +146,7 @@
 
 - see all artists of genre 
 	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
-	[!][*] handle US 100
+	-> GET /v4.1/regions/{region_id}/artists?start_point=0&items_to_get=20&q=xxx
 
 - see all albums of chart 
 	-> GET /v4.1/charts/{chart_id}/albums?start_point=0&items_to_get=20
@@ -168,7 +168,7 @@
 	-> GET /v4.1/artists?start_point=0&items_to_get=20&q=xxx	
 
 - search albums by text 
-	[!][*] Not found -> GET /v4.1/albums/search?start_point=0&items_to_get=20&q=xxx	
+	-> GET /v4.1/albums/search?start_point=0&items_to_get=20&q=xxx
 
 - search collections by text 
 	-> GET /collections/search?start_point=0&items_to_get=20&q=xxx	
@@ -178,7 +178,7 @@
 	-> GET /videos/search?start_point=0&items_to_get=20&q=xxx	
 
 - search users by text 
-	-> GET /users/search?start_point=0&items_to_get=20&q=xxx	
+	-> GET /users/search?start_point=0&items_to_get=20&value=xxx	
 
 ***** VIDEO *****
 
