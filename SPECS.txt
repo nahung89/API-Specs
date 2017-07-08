@@ -98,7 +98,7 @@
 	-> GET /v4.1/artists/{artist_id}/collections?start_point=0&items_to_get=20
 	
 - get artist’ live videos
-	[!][*] GET /v4.1/artists/{artist_id}/live_videos?start_point=0&items_to_get=20
+	-> GET /v4.1/artists/{artist_id}/liveVideos?start_point=0&items_to_get=20
 
 - get relate artists of artist
 	-> GET /v4.1/artists/{artist_id}/related?start_point=0&items_to_get=20
@@ -146,6 +146,8 @@
 
 - see all artists of genre 
 	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
+
+- see all artists of region
 	-> GET /v4.1/regions/{region_id}/artists?start_point=0&items_to_get=20&q=xxx
 
 - see all albums of chart 
@@ -153,7 +155,9 @@
 
 - see all collections of genre 
 	-> GET /genres/{genre_id}/collections?start_point=0&items_to_get=20
-	[!][*] handle US 100
+
+- see all collections of region
+	[!][*] /v4.1/regions/{region_id}/collections?start_point=0&items_to_get=20
 
 - see all videos of chart 
         ->  GET /charts/{chart_id}?start_point=0&items_to_get=20
