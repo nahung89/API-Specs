@@ -11,7 +11,6 @@
 
 - get artists by genre
 	-> GET /v4.1/genres/{genre_id}/artists?start_point=0&items_to_get=20&q=xxx
-	[!][*] return all artists in main genre and sub genres
 
 - like artists
 	-> POST /v4.1/users/me/likedArtists
@@ -86,7 +85,6 @@
 
 - get artist
 	-> GET /v4.1/artists/{artist_id}
-	[x] `collections` = []
 
 - get artist’s albums
 	-> GET /v4.1/artists/{artist_id}/albums?start_point=0&items_to_get=20
@@ -130,8 +128,8 @@
 - get related albums of album
 	-> GET /v4.1/albums/{album_id}/related?start_point=0&items_to_get=20
 
-- report album
-	[!] POST /v4.1/albums/{album_id}/reports
+# report album
+#	[!] POST /v4.1/albums/{album_id}/reports
 
 
 ***** SEARCH *****
@@ -157,7 +155,7 @@
 	-> GET /genres/{genre_id}/collections?start_point=0&items_to_get=20
 
 - see all collections of region
-	[!][*] /v4.1/regions/{region_id}/collections?start_point=0&items_to_get=20
+	-> GET /v4.1/regions/{region_id}/collections?start_point=0&items_to_get=20
 
 - see all videos of chart 
         ->  GET /charts/{chart_id}?start_point=0&items_to_get=20
@@ -212,18 +210,3 @@
 
 ***** OTHER ******
 
-- GET http://v4-api.vibbidi.com:8018/v4.1/artists
-	[!] optimize avatar size to reduce download time
-
-- GET /videos/{videoId}
-- GET /videos/search
-- GET /v4.1/artists/{artist_id}/singles
-- GET /genres/{id}/new
-- GET /genres/{id}/classic
-- GET /charts/{id}
-- GET /collections/{id}
-- GET /v4.1/collections/{id}/shuffled
-	[!][*] add `artist_id` into each `video` object
-
-- GET http://v4-api.vibbidi.com:8018/v4.1/albums/975411113689385?has_videos=1&items_to_get=0&start_point=0
-	[!][*] `artists` has more than 1 item, first item is not good as second. while app always use first item to show up.
