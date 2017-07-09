@@ -78,8 +78,8 @@
 ***** TIMELINE *****
 
 - get feed
-	-> GET /v4.1/feed
-
+	-> GET /v4.1/timeline
+	[!] type: "album" needs genre_id to show find more
 
 ***** ARTIST *****
 
@@ -206,7 +206,6 @@
     - song
     - url
     - feedback
-    [!] NOT FOUND
 
 ***** OTHER ******
 
