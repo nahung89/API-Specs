@@ -74,6 +74,8 @@
 - get liked artists 
 	-> GET /v4.1/users/{user_id}/likedArtists?start_point=0&items_to_get=20 (order by popularity)
 
+- get collect albums list
+        -> GET v4.1/charts/{chart_id}/albums with chart_id = “369415522042770”
 
 ***** TIMELINE *****
 
