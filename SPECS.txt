@@ -81,7 +81,9 @@
 
 - get feed
 	-> GET /v4.1/timeline
-	[!] type: "album" needs genre_id to show find more
+- find more album
+	-> get chart_id random from albums list
+	-> GET v4.1/charts/{chart_id}/albums
 
 ***** ARTIST *****
 
