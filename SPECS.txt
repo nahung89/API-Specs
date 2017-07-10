@@ -75,7 +75,7 @@
 	-> GET /v4.1/users/{user_id}/likedArtists?start_point=0&items_to_get=20 (order by popularity)
 
 - get collect albums list
-        -> GET v4.1/charts/{chart_id}/albums with chart_id = “369415522042770”
+        [!] GET v4.1/charts/{chart_id}/albums with chart_id = “369415522042770”
 
 ***** TIMELINE *****
 
@@ -198,7 +198,7 @@
 	-> POST /v4.1/users/me/dislikedVideos
 	1. Form/JSON param: `video_ids=111,222,333` (comma-separated values)  
 
-- undislike artist
+- undislike videos
 	-> POST /v4.1/users/me/undislikeVideos
 	1. Form/JSON param: `video_ids=111,222,333` (comma-separated values)
     
