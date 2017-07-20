@@ -1,9 +1,11 @@
 // GET /v4.1/artists/{artist_id}
 // Requires signed in
+//		-> add `locked` for artist
 Response = {
     "id": 856617341290,
     "name": "The Chainsmokers",
     "bio": "",
+    "locked": false, // ~~> add `locked` for artist 
     "live_videos": [/* ... */],
     "special": [
         {
@@ -48,6 +50,7 @@ Response = {
                     "name": "Charli XCX",
                     "bio": "",
                     "description": "",
+                    "locked": true, // ~~> add `locked` for artist 
                     "square_image": {
                         "height": 640,
                         "mime_type": "image/jpeg",
@@ -147,6 +150,7 @@ Response =
 
 // GET /v4.1/special/{special_id}
 // Requires signed in
+// 		-> in design we have 
 Error_when_Locked = {
     "error": {
         "id": "api.forbidden.app_error",
@@ -163,15 +167,8 @@ Response = {
     "cover_image": {
         "uri": "https://berserker1.vibbidi-vid.com/vibbidi/videos/video___4u6bWs-ZG0o___csju58en5nnseewtocu8ansdbo.mp4.bgcover.jpg"
     },
-    "uri": "https://berserker7.vibbidi-vid.com/vibbidi/videos/video___hLQl3WQQoQ0___1jpumz9w3entnbgahmhfeo85k7.mp4",
     "duration": 7382.9,
     "mime_type": "video/mp4",
-    "width": 1280,
-    "height": 720,
-    "size": 443823359,
-    "integrated_loudness": -11.1,
-    "player_audio_volume": 0.5688529308438415,
-    "screen_shot_interval": 20,
     "artist_id": 499273824010207,
     "creator": "Charli XCX",
     "artists": [
@@ -191,74 +188,49 @@ Response = {
     "is_collected": true,
     "tracks": [
         {
-            "title": "A Head Full of Dreams",
-            "artist_id": 499273824010207,
-            "creator": "Charli XCX",
-            "artists": [
-                {
-                    "id": 499273824010207,
-                    "name": "Charli XCX",
-                    "bio": "",
-                    "description": "",
-                    "square_image": {
-                        "height": 640,
-                        "mime_type": "image/jpeg",
-                        "uri": "https://i.scdn.co/image/532d7d184c3a8887932a29f4fb29fb4ff4665b40",
-                        "width": 640
-                    }
-                }
-            ],
-            "start_point": 0.0,
+        	"id": 11111111,
             "cover_image": {
-                "uri": "https://berserker1.vibbidi-vid.com/vibbidi/videos/video___4u6bWs-ZG0o___csju58en5nnseewtocu8ansdbo.mp4.bgcover.jpg"
-            }
+    		    "uri": "https://berserker1.vibbidi-vid.com/vibbidi/videos/video___4u6bWs-ZG0o___csju58en5nnseewtocu8ansdbo.mp4.bgcover.jpg"
+    		},
+    		"uri": "https://berserker7.vibbidi-vid.com/vibbidi/videos/video___hLQl3WQQoQ0___1jpumz9w3entnbgahmhfeo85k7.mp4",
+    		"duration": 7382.9,
+    		"mime_type": "video/mp4",
+    		"width": 1280,
+    		"height": 720,
+    		"size": 443823359,
+    		"integrated_loudness": -11.1,
+    		"player_audio_volume": 0.5688529308438415,
+    		"screen_shot_interval": 20,
+            "original_videos": [
+            	{
+            		"id": 210241900955180,
+            		"title": "Mr. Blue Sky",
+            		"creator": "Charli XCXa",
+            		"artist_id": 499273824010207,
+            		"cover_image": {
+                		"uri": "https://berserker4.vibbidi-vid.com/vibbidi/videos/video___swYdKF1MpWg___y4cjm5tzw6nokj3u48a357wpf7.mp4.bgcover.jpg"
+            		},
+            	},
+            	{
+            		"id": 210241900955180,
+            		"title": "Mr. Blue Sky",
+            		"creator": "Electric Light Orchestra",
+            		"artist_id": 139317989948130,
+            		"cover_image": {
+                		"uri": "https://berserker4.vibbidi-vid.com/vibbidi/videos/video___swYdKF1MpWg___y4cjm5tzw6nokj3u48a357wpf7.mp4.bgcover.jpg"
+            		},
+            	},
+            	{
+            		"id": 210241900955180,
+            		"title": "Mr. Blue Sky",
+            		"creator": "Electric Light Orchestra",
+            		"artist_id": 139317989948130,
+            		"cover_image": {
+                		"uri": "https://berserker4.vibbidi-vid.com/vibbidi/videos/video___swYdKF1MpWg___y4cjm5tzw6nokj3u48a357wpf7.mp4.bgcover.jpg"
+            		},
+            	},
+            ],
         },
-        {
-            "title": "Every Teardrop Is a Waterfall",
-            "artist_id": 499273824010207,
-            "creator": "Charli XCX",
-            "artists": [
-                {
-                    "id": 499273824010207,
-                    "name": "Charli XCX",
-                    "bio": "",
-                    "description": "",
-                    "square_image": {
-                        "height": 640,
-                        "mime_type": "image/jpeg",
-                        "uri": "https://i.scdn.co/image/532d7d184c3a8887932a29f4fb29fb4ff4665b40",
-                        "width": 640
-                    }
-                }
-            ],
-            "start_point": 378.2,
-            "cover_image": {
-                "uri": "https://berserker1.vibbidi-vid.com/vibbidi/videos/video___4u6bWs-ZG0o___csju58en5nnseewtocu8ansdbo.mp4.bgcover.jpg"
-            }
-        },
-        {
-            "title": "The Scientist",
-            "artist_id": 499273824010207,
-            "creator": "Charli XCX",
-            "artists": [
-                {
-                    "id": 499273824010207,
-                    "name": "Charli XCX",
-                    "bio": "",
-                    "description": "",
-                    "square_image": {
-                        "height": 640,
-                        "mime_type": "image/jpeg",
-                        "uri": "https://i.scdn.co/image/532d7d184c3a8887932a29f4fb29fb4ff4665b40",
-                        "width": 640
-                    }
-                }
-            ],
-            "start_point": 721.6,
-            "cover_image": {
-                "uri": "https://berserker1.vibbidi-vid.com/vibbidi/videos/video___4u6bWs-ZG0o___csju58en5nnseewtocu8ansdbo.mp4.bgcover.jpg"
-            }
-        }
         /* ... */
     ],
     "n_tracks": 7
