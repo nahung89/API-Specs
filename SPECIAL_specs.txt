@@ -1,0 +1,59 @@
+
+***** SPECIAL PAGE *****
+
+- get special info & tracks & original videos of each track
+	-> GET /v4.1/special/{special_id}
+	[!] Track’s structure: need `id`, `uri`, `duration`
+	[!] Video’s structure (3 item max) of each track: need original video info + seek time to track
+
+- collect special
+	-> POST /v4.1/users/me/collectedSpecial
+	-> Form/JSON param: id=xxx
+
+- discard special
+	[!?] DELETE /v4.1/users/me/collectedSpecial
+	[!?] Form/JSON param: id=xxx
+
+
+- get related specials
+	[!] Not found
+
+
+
+***** TOP CHART PAGE *****
+
+- get info of ALL artist’s specials in a chart (paging)
+	[!] Not found
+	[!] need array `cover_url`, `total_special`
+	https://zpl.io/1hhJXc, https://zpl.io/ZdUmFD
+
+- get info of UNLOCKED artist’s specials in a chart (paging)
+	[!] Not found
+	[!] need array `cover_url`, `total_special`
+	https://vibbidi.slack.com/files/nishiyama/F6CMC278R/newspec_specialcontents_seeall.jpg
+
+- get all specials of an artist (paging)
+	-> follow to *USER PAGE*
+
+
+
+
+***** ARTIST PAGE *****
+
+- include specials section
+	-> GET /v4.1/artists/{artist_id}
+
+- get all specials (paging)
+	-> GET /v4.1/artists/{artist_id}/special
+
+- unlock special
+	-> POST /v4.1/artists/{artist_id}/unlockSpecial
+
+
+
+***** USER PAGE *****
+
+- get albums & special together (paging)
+	-> GET /v4.1/users/{user_id}/albumsSpecial
+
+
