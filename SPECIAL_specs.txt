@@ -3,19 +3,22 @@
 
 - get special info & tracks & original videos of each track
 	-> GET /v4.1/special/{special_id}
-	[!] Track’s structure: need `id`, `uri`, `duration`
-	[!] Video’s structure (3 item max) of each track: need original video info + seek time to track
+	[!] Special entity: need full concert `uri`
+	[!] Track entity: need `id`, `uri`, `duration`, `videos` (max 3 items)
+	[!] Video entity of each track: need original video info, `seek` to seek in track
+	[!] Untest
 
-- collect special
+- collect a special
 	-> POST /v4.1/users/me/collectedSpecial
 	-> Form/JSON param: id=xxx
+	[!] Untest
 
-- discard special
-	[!?] DELETE /v4.1/users/me/collectedSpecial
-	[!?] Form/JSON param: id=xxx
+- discard a special
+	-> DELETE /v4.1/users/me/collectedSpecial/{special_id}
+	[!] Untest
 
-
-- get related specials
+- get all related specials (paging)
+	-> GET /v4.1/special/{special_id}/related
 	[!] Not found
 
 
@@ -24,16 +27,16 @@
 
 - get info of ALL artist’s specials in a chart (paging)
 	[!] Not found
-	[!] need array `cover_url`, `total_special`
+	[!] need array `cover_urls`, `total_specials_count`
 	https://zpl.io/1hhJXc, https://zpl.io/ZdUmFD
 
 - get info of UNLOCKED artist’s specials in a chart (paging)
 	[!] Not found
-	[!] need array `cover_url`, `total_special`
+	[!] need array `cover_urls`, `total_specials_count`
 	https://vibbidi.slack.com/files/nishiyama/F6CMC278R/newspec_specialcontents_seeall.jpg
 
 - get all specials of an artist (paging)
-	-> follow to *USER PAGE*
+	-> using apis in *USER PAGE*
 
 
 
@@ -42,18 +45,21 @@
 
 - include specials section
 	-> GET /v4.1/artists/{artist_id}
+	[!] Untest
 
 - get all specials (paging)
 	-> GET /v4.1/artists/{artist_id}/special
+	[!] Untest
 
-- unlock special
+- unlock all specials of an artist
 	-> POST /v4.1/artists/{artist_id}/unlockSpecial
+	[!] Untest
 
 
 
 ***** USER PAGE *****
 
-- get albums & special together (paging)
-	-> GET /v4.1/users/{user_id}/albumsSpecial
+- get collected specials (paging)
+	-> GET /v4.1/users/{user_id}/collectedSpecial
 
 
