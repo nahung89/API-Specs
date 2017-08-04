@@ -1,65 +1,53 @@
 
 ***** SPECIAL PAGE *****
 
-- get special info & tracks & original videos of each track
++ get special info & tracks & original videos of each track
 	-> GET /v4.1/special/{special_id}
-	[!] Special entity: need full concert `uri`
-	[!] Track entity: need `id`, `uri`, `duration`, `videos` (max 3 items)
-	[!] Video entity of each track: need original video info, `seek` to seek in track
-	[!] Untest
+	[$] OK but need to test more
 
-- collect a special
++ collect a special
 	-> POST /v4.1/users/me/collectedSpecial
 	-> Form/JSON param: id=xxx
-	[!] Untest
 
-- discard a special
++ discard a special
 	-> DELETE /v4.1/users/me/collectedSpecial/{special_id}
-	[!] Untest
 
-- get all related specials (paging)
++ get all related specials (paging)
 	-> GET /v4.1/special/{special_id}/related
-	[!] Not found
 
 
 
 ***** TOP CHART PAGE *****
 
-- get info of ALL artist’s specials in a chart (paging)
-	[!] Not found
-	[!] need array `cover_urls`, `total_specials_count`
-	https://zpl.io/1hhJXc, https://zpl.io/ZdUmFD
++ get info of ALL artist’s specials in a chart (paging)
+	-> GET /v4.1/special/artists (US TOP 100)
+	-> GET /v4.1/genres/{genre_id}/special/artists (Other charts which have genre_id)
 
 - get info of UNLOCKED artist’s specials in a chart (paging)
-	[!] Not found
-	[!] need array `cover_urls`, `total_specials_count`
-	https://vibbidi.slack.com/files/nishiyama/F6CMC278R/newspec_specialcontents_seeall.jpg
+	-> GET /v4.1/special/artists?unlocked=1
+	-> GET /v4.1/genres/{genre_id}/special/artists?unlocked=1
 
-- get all specials of an artist (paging)
-	-> using apis in *USER PAGE*
-
++ get all specials of an artist (paging)
+	-> GET /v4.1/artists/{artist_id}/special
+	-> GET /v4.1/genres/{genre_id}/special/artists/{artist_id} (Other charts which have genre_id)
 
 
 
 ***** ARTIST PAGE *****
 
-- include specials section
++ include specials section
 	-> GET /v4.1/artists/{artist_id}
-	[!] Untest
 
-- get all specials (paging)
++ get all specials (paging)
 	-> GET /v4.1/artists/{artist_id}/special
-	[!] Untest
 
-- unlock all specials of an artist
++ unlock all specials of an artist
 	-> POST /v4.1/artists/{artist_id}/unlockSpecial
-	[!] Untest
 
 
 
 ***** USER PAGE *****
 
-- get collected specials (paging)
++ get collected specials (paging)
 	-> GET /v4.1/users/{user_id}/collectedSpecial
-
 
