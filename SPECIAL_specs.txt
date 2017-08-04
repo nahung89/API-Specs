@@ -23,7 +23,7 @@
 	-> GET /v4.1/special/artists (US TOP 100)
 	-> GET /v4.1/genres/{genre_id}/special/artists (Other charts which have genre_id)
 
-- get info of UNLOCKED artist’s specials in a chart (paging)
++ get info of UNLOCKED artist’s specials in a chart (paging)
 	-> GET /v4.1/special/artists?unlocked=1
 	-> GET /v4.1/genres/{genre_id}/special/artists?unlocked=1
 
