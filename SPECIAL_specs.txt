@@ -3,7 +3,6 @@
 
 + get special info & tracks & original videos of each track
 	-> GET /v4.1/special/{special_id}
-	[$] OK but need to test more
 
 + collect a special
 	-> POST /v4.1/users/me/collectedSpecial
@@ -25,11 +24,11 @@
 
 + get info of UNLOCKED artist’s specials in a chart (paging)
 	-> GET /v4.1/special/artists?unlocked=1
-	-> GET /v4.1/genres/{genre_id}/special/artists?unlocked=1
+	## GET /v4.1/genres/{genre_id}/special/artists?unlocked=1
 
 + get all specials of an artist (paging)
 	-> GET /v4.1/artists/{artist_id}/special
-	-> GET /v4.1/genres/{genre_id}/special/artists/{artist_id} (Other charts which have genre_id)
+	## GET /v4.1/genres/{genre_id}/special/artists/{artist_id} (Other charts which have genre_id)
 
 
 
@@ -50,4 +49,27 @@
 
 + get collected specials (paging)
 	-> GET /v4.1/users/{user_id}/collectedSpecial
+
+
+***** LOG *****
+
+`POST /v4.1/events/sharingSpecialToSocials`
+Form/JSON params:
++ `source`: string, be "view_artist_special", "view_artist_profile", "view_profile_special" or "view_related_special"
++ `artist_id`: ID of shared artist
++ `special_id`: ID of the special concert that triggers this action
++ `ext`: string, reserved.
+
+`source`:
+    a) View special concerts of an artist: `view_artist_special`
+    b) View artist profile: `view_artist_profile`
+    c) View concert section in a user profile: `view_profile_special`
+    d) View related concerts of a special concert: `view_related_special`
+
+Whenever app shows "Sharing to Socials" screen, app needs to call this endpoint.
+
+
+
+
+
 
