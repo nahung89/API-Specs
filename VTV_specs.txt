@@ -1,0 +1,39 @@
+
+
+***** VTV page *****
+
+- get current program & videos belongs to
+	[?] API . . .
+	[!] Program: schedule_time, duration, VJ name, VJ avatar, genre, title, brief
+	[!] Video: reuse `Video` with shedule_time (need to discuss if need or could get from program)
+
+- get next program & videos belongs to
+	[?] API . . .
+	[!] Same structure with api above
+
+- get number of audience
+	[?] API . . . 
+	[!] might need WebSocket event
+
+- receive messages
+	[?] WS . . .
+	[!] Message: sender_avatar, sender_name, message (support emoji unicode, gif)
+
+- get visible friends
+	[?] How to define Friend?
+	[?] API . . . 
+	[?] WS . . .
+
+
+
+***** NEXT PARTY page *****
+
+- get list date has program (maybe current day + next 7 days)
+	[?] API . . . 
+	[!] Same structure with VTV page
+
+- apply for VJ
+	[?] Need to define more.
+
+
+
