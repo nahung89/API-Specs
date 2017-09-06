@@ -2,12 +2,12 @@
 
 ***** VTV page *****
 
-- get current program & videos belongs to
+- get current program & stories belongs to
 	[?] API . . .
 	[!] Program: schedule_time, duration, VJ name, VJ avatar, genre, title, brief
-	[!] Video: reuse `Video` with shedule_time (need to discuss if need or could get from program)
+	[!] Story: reuse `Video` with shedule_time (need to discuss)
 
-- get next program & videos belongs to
+- get next program & stories belongs to
 	[?] API . . .
 	[!] Same structure with api above
 
@@ -25,14 +25,17 @@
 	[?] WS . . .
 
 
-
-***** NEXT PARTY page *****
+***** PARTY CALENDAR page *****
 
 - get list date has program (maybe current day + next 7 days)
 	[?] API . . . 
 	[!] Same structure with VTV page
 
 - apply for VJ
+	[?] Need to define more.
+	[?] API . . .
+
+- invite friend
 	[?] Need to define more.
 
 
