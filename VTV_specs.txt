@@ -3,7 +3,7 @@
 ***** VTV page *****
 
 - get current program & stories belongs to
-	[?] API . . .
+	-> GET /v5.0/vtvChannels/{vtv_channel_id}/now
 	[!] Program: schedule_time, duration, VJ name, VJ avatar, genre, title, brief
 	[!] Story: reuse `Video` with shedule_time (need to discuss)
 
@@ -14,6 +14,10 @@
 - get number of audience
 	[?] API . . . 
 	[!] might need WebSocket event
+
+- post a comment to channel
+	-> POST /v5.0/vtvChannels/{vtv_channel_id}/comments
+	1. Form/JSON param: `message=So Cool :Other13: yay`
 
 - receive messages
 	[?] WS . . .
