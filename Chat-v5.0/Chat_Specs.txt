@@ -1,0 +1,53 @@
+***** CHAT HOME *****
+
+- get all channels
+	-> GET v4.1/chat/channels?start_point=0&items_to_get=20
+	[!] need newest message to display
+	[!] need request status to know which channel is in requesting
+
+- get badget number
+	-> GET v4.1/users/me/unread // `unread_activities`, `unread_channels`
+	-> GET v4.1/chat/channels  // `unread` field
+
+
+
+***** PROFILE DIALOG *****
+
+- create channel
+	-> POST v4.1/chat/channels
+
+
+
+***** CHAT DIALOG *****
+
+- get channel’s member
+	-> GET v4.1/chat/channels/{roomId}/members
+
+- get messages
+	-> GET v4.1/chat/channels/{roomId}/posts
+
+- get single message, combine with WS event
+    	-> POST v4.1/chat/posts/{messageId}
+
+- post message    
+	-> POST v4.1/chat/channels/{roomId}/posts
+
+- mark channel as read (latest message)
+    	-> POST v4.1/chat/channels/{roomId}/markAsRead
+
+##########################
+
+- request new conversation (with 1st text message): https://zpl.io/2vMxEAj
+	[!]
+
+- response the request -> YES/NO: https://zpl.io/VO0Z41k
+	[!]
+
+- update facebook token to send 1st message: https://zpl.io/2vM3Or5
+	[!]
+
+- get invitation code: https://zpl.io/2jZ3YOQ
+	[!]
+
+- get waiting time to start new conversation: https://zpl.io/2jZ3YOQ
+	[!]
