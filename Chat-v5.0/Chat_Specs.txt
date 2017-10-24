@@ -15,10 +15,10 @@
 	[!] response: same info as CHATHOME + request state (discussing)
 
 - request new conversation (with 1st text message): https://zpl.io/2vMxEAj
-	[!] POST channel_id, message
+	[!] POST channel_id, message (need discuss)
 
 - response the request -> YES/NO: https://zpl.io/VO0Z41k
-	[!] POST channel_id , state: YES/NO
+	[!] POST channel_id , state: YES/NO (need discuss)
 
 - update facebook token to send 1st message: https://zpl.io/2vM3Or5
 	[!] POST facebook_token
@@ -38,6 +38,13 @@
 
 - accept chat request from XYZ (to sender): https://zpl.io/aRMw1Dz
 	[!] receiver_id, channel_id, noti_title, noti_message
+
+
+********** SIGNUP **********
+
+- post invitation code when sign up
+	[!]
+
 
 
 ################################### DONE ###########################################
