@@ -1,24 +1,62 @@
-***** CHAT HOME *****
+
+
+********** CHAT HOME **********
 
 - get all channels
 	-> GET v4.1/chat/channels?start_point=0&items_to_get=20
 	[!] need newest message to display
 	[!] need request status to know which channel is in requesting
 
+
+********** CHAT **********
+
+- get channel informations
+	[!] GET v4.1/chat/channels/{roomId)
+	[!] response: same info as CHATHOME + request state (discussing)
+
+- request new conversation (with 1st text message): https://zpl.io/2vMxEAj
+	[!] POST channel_id, message
+
+- response the request -> YES/NO: https://zpl.io/VO0Z41k
+	[!] POST channel_id , state: YES/NO
+
+- update facebook token to send 1st message: https://zpl.io/2vM3Or5
+	[!] POST facebook_token
+
+- get VIBBIDI invitation code: https://zpl.io/2jZ3YOQ
+	[!] 
+
+- get waiting time to start new conversation: https://zpl.io/2jZ3YOQ
+	[!] 
+
+
+********** PUSH NOTI & WebSocket **********
+
+- new chat request from ABC (to receiver): https://zpl.io/aXYyPZg, https://zpl.io/b6N516j
+	[!] sender_id, channel_id, noti_title, noti_message
+	[!] sender_message (optional)
+
+- accept chat request from XYZ (to sender): https://zpl.io/aRMw1Dz
+	[!] receiver_id, channel_id, noti_title, noti_message
+
+
+################################### DONE ###########################################
+
+
+********** CHAT HOME **********
+
 - get badget number
 	-> GET v4.1/users/me/unread // `unread_activities`, `unread_channels`
 	-> GET v4.1/chat/channels  // `unread` field
 
 
-
-***** PROFILE DIALOG *****
+********** PROFILE DIALOG **********
 
 - create channel
 	-> POST v4.1/chat/channels
 
 
-
-***** CHAT DIALOG *****
+********** CHAT **********
 
 - get channel’s member
 	-> GET v4.1/chat/channels/{roomId}/members
@@ -35,19 +73,7 @@
 - mark channel as read (latest message)
     	-> POST v4.1/chat/channels/{roomId}/markAsRead
 
-##########################
+- leave channel
+	-> POST v4.1/chat/channels/{roomId)/leave
 
-- request new conversation (with 1st text message): https://zpl.io/2vMxEAj
-	[!]
 
-- response the request -> YES/NO: https://zpl.io/VO0Z41k
-	[!]
-
-- update facebook token to send 1st message: https://zpl.io/2vM3Or5
-	[!]
-
-- get invitation code: https://zpl.io/2jZ3YOQ
-	[!]
-
-- get waiting time to start new conversation: https://zpl.io/2jZ3YOQ
-	[!]
