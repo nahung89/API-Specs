@@ -5,29 +5,42 @@
 - get all channels
 	-> GET v4.1/chat/channels?start_point=0&items_to_get=20
 	[!] need newest message to display
-	[!] need request status to know which channel is in requesting
+	[!] `request` : { sender, state = pending/accepted/rejected }
 
+
+********** PROFILE DIALOG **********
+
+- create channel
+	-> POST v4.1/chat/channels
+	-> params: “type" : "conversation”, "user_ids" : "1,2,3"
+	[!] error in case reach max new conversation
+
+- follow user
+	-> POST users/follow
+	-> `target_id` : {user_id}
+	[!] error in case reach max new following
 
 ********** CHAT **********
 
 - get channel informations
-	[!] GET v4.1/chat/channels/{roomId)
-	[!] response: same info as CHATHOME + request state (discussing)
-
-- request new conversation (with 1st text message): https://zpl.io/2vMxEAj
-	[!] POST channel_id, message (need discuss)
+	[!] GET v4.1/chat/channels/{roomId}
+	[!] channel information (same as list channels)
+	[!] `request` : { sender, state = pending/accepted/rejected }
+	# sample: https://api.myjson.com/bins/1c1uqv
 
 - response the request -> YES/NO: https://zpl.io/VO0Z41k
-	[!] POST channel_id , state: YES/NO (need discuss)
+	[!] POST channel_id , state: YES/NO
 
 - update facebook token to send 1st message: https://zpl.io/2vM3Or5
 	[!] POST facebook_token
 
 - get VIBBIDI invitation code: https://zpl.io/2jZ3YOQ
-	[!] 
+	[!] API
 
 - get waiting time to start new conversation: https://zpl.io/2jZ3YOQ
-	[!] 
+- get waiting time to start new follow
+	[!] API
+	[!] the same api?
 
 
 ********** PUSH NOTI & WebSocket **********
@@ -55,12 +68,6 @@
 - get badget number
 	-> GET v4.1/users/me/unread // `unread_activities`, `unread_channels`
 	-> GET v4.1/chat/channels  // `unread` field
-
-
-********** PROFILE DIALOG **********
-
-- create channel
-	-> POST v4.1/chat/channels
 
 
 ********** CHAT **********
