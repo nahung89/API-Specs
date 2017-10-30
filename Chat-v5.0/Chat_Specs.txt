@@ -20,6 +20,10 @@
 	-> `target_id` : {user_id}
 	[!] error in case reach max new following (in https://zpl.io/adxKqLn)
 
+- get content of Ask Me Anything (new requirement from @nishiyama)
+	-> https://github.com/Glue-th/VIBBIDI-Swift/issues/700
+	[!] API
+
 
 ********** CHAT **********
 
