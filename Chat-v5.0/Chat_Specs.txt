@@ -1,4 +1,9 @@
+********** APPLY VJ **********
 
+- get all collections
+	-> GET users/{user_id}/collections?items_to_get=100&owner={user_id}&start_point=0
+	[!] need `duration` of all videos in collection or `duration` of each video
+	[!] https://zpl.io/Vqy47Y6
 
 ********** CHAT HOME **********
 
