@@ -5,6 +5,7 @@
 	[!] need `duration` of all videos in collection or `duration` of each video
 	[!] https://zpl.io/Vqy47Y6
 
+
 ********** CHAT HOME **********
 
 - get all channels
@@ -56,6 +57,13 @@
 	-> GET v4.1/users/me/unread // `unread_activities`, `unread_channels`
 	-> GET v4.1/chat/channels  // `unread` field
 	[!] Need to update?
+
+
+********** VTV **********
+
+- get emojis in category
+	[!] v5.0/emojis only have list emoji in 1 category
+	# sample: http://album-api.vibbidi.com/mock/emoji.json
 
 
 ********** PUSH NOTI & WebSocket **********
